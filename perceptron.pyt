@@ -1,4 +1,5 @@
 import numpy as np
+import matplotlib.pyplot as plt
 x=np.array([[2,3],
             [1,5],
             [2,8],
@@ -25,6 +26,17 @@ for epoch in range(100):
         break
 print("weights",weights)
 print("bias",bias)
-test_point=np.array([4,3])
-test_result=step(np.dot(test_point,weights)+bias)
-print(f"Test Point {test_point} classified as: {test_result}")
+for i in range(len(x)):
+    if y[i]==0:
+        plt.scatter(x[i][0],x[i][1],color='red')
+    else:
+        plt.scatter(x[i][0],x[i][1],color='blue')
+x_values=np.array([0,8])
+y_values= -(weights[0]/weights[1])*x_values-(bias/weights[1])
+plt.plot(x_values, y_values,color='green',label='Decision Boundary')
+plt.xlabel('x1')
+plt.ylabel('x2')
+plt.title('perceptron decision boundary')
+plt.legend
+plt.grid(True)
+plt.show()
