@@ -1,2 +1,2 @@
-# Regression-model
-my first regression model code
+# learning Machine Learning
+my first models
